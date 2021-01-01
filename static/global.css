@@ -1,0 +1,102 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-main-accent: #3d58a5;
+    --color-main-bg: #fbfaff;
+    --color-alt-bg: #ffffff;
+    --color-special-bg: #efefef;
+    --color-main-text: #1d1b2e;
+    --color-alt-text: #696969;
+    --color-borders: #e4e4e4;
+    --color-thin: #b0b0b0;
+    --color-shine: #000000;
+    --filter-invert: invert(0);
+  }
+
+  [data-theme="dark"] {
+    --color-main-accent: #f23c4a;
+    --color-main-bg: #171c26;
+    --color-alt-bg: #20263a;
+    --color-special-bg: #2c3445;
+    --color-main-text: #f3f2f7;
+    --color-alt-text: #8fa0bf;
+    --color-borders: #3b465a;
+    --color-thin: #6b7a99;
+    --color-shine: #ffffff;
+    --filter-invert: invert(100%);
+  }
+
+  [data-theme="dark"] img {
+    filter: brightness(0.9) contrast(1.2);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-main-accent: #f23c4a;
+    --color-main-bg: #171c26;
+    --color-alt-bg: #20263a;
+    --color-special-bg: #2c3445;
+    --color-main-text: #f3f2f7;
+    --color-alt-text: #8fa0bf;
+    --color-borders: #3b465a;
+    --color-thin: #6b7a99;
+    --color-shine: #ffffff;
+    --filter-invert: invert(100%);
+  }
+
+  /* set light colours if user overrides it */
+  [data-theme="light"] {
+    --color-main-accent: #3d58a5;
+    --color-main-bg: #fbfaff;
+    --color-alt-bg: #ffffff;
+    --color-special-bg: #f4f4f4;
+    --color-main-text: #1d1b2e;
+    --color-alt-text: #696969;
+    --color-borders: #e4e4e4;
+    --color-thin: #b0b0b0;
+    --color-shine: #000000;
+    --filter-invert: invert(0);
+  }
+
+  [data-theme="light"] img {
+    filter: brightness(1) contrast(1);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: color ease-out 0.1s, background-color ease-out 0.1s;
+}
+
+html,
+body {
+  height: 100%;
+  height: 100%;
+}
+
+html {
+  scrollbar-color: var(--color-thin) var(--color-special-bg);
+}
+
+body {
+  background-color: var(--color-main-bg);
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--color-main-accent);
+}
+
+html::-webkit-scrollbar {
+  background-color: var(--color-special-bg);
+  width: 0.5rem;
+}
+
+/* keep this just in case */
+/* /1* fix svelte-image *1/ */
+/* div.wrapper { */
+/*   display: block !important; */
+/* } */
+
